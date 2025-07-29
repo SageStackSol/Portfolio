@@ -1,0 +1,23 @@
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import Questionnaire from '@/components/Questionnaire';
+import Invoice from '@/components/Invoice';
+import Footer from '@/components/Footer';
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      <main id="home">
+        <Hero />
+        <Services />
+        <Questionnaire />
+        <Invoice />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
