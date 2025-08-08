@@ -14,6 +14,21 @@ import 'aos/dist/aos.css';
 const App = () => {
   const [startAnimation, setStartAnimation] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  useEffect(() => {
+  AOS.init({ once: false, duration: 1000 });
+
+  const container = document.getElementById('.your-scroll-container');
+  if (container) {
+    container.addEventListener('scroll', AOS.refresh);
+  }
+
+  return () => {
+    if (container) {
+      container.removeEventListener('scroll', AOS.refresh);
+    }
+  };
+}, []);
+
 
   useEffect(() => {
     const timer1 = setTimeout(() => setStartAnimation(true), 1000);
@@ -49,38 +64,23 @@ const App = () => {
             <div class="spark"></div>
             <div class="line"></div>
             <div class="spark"></div>
-            {/* <div class="container">
-    <div class="line"><div class="spark"></div></div>
-    <div class="line"><div class="spark"></div></div>
-    <div class="line"><div class="spark"></div></div>
-  </div> */}
-            {/* <div className="absolute w-screen h-screen bg-black ">
-      {[0, 1, 2].map((index) => (
-        <div
-          key={index}
-          className="absolute top-0 h-full w-[0.5px] bg-[#dcd9d9] opacity-20"
-          style={{
-            left: `${(index + 1) * 25}%`, // Distribute at 25%, 50%, 75%
-          }}
-        >
-          <div className="spark animate-spark" />
-        </div>
-      ))}
-    </div> */}
-    <div className="-z-[500]">
-            <SplashCursor color='white' />
-            
-    </div>
-            {/* <Cursor /> */}
-            {/* <SmoothFollower /> */}
-            {/* <div className=' absolute bottom-2'> */}
-            {/* </div> */}
-            <BrowserRouter>
+      <div id="scroll-container" className=" h-[90vh] overflow-scroll ">
+
+    {/* <div className="h-[85vh] overflow-scroll"> */}
+  <BrowserRouter>
               <Navbar /> 
               <Routes>  
                 <Route path="/" element={<Home />} />
               </Routes>
             </BrowserRouter>
+        {/* </div> */}
+      </div>
+    <div className="-z-[500]">
+            <SplashCursor color='white' />
+            
+    </div>
+    
+          
             
           </div>
                 </>

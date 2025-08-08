@@ -105,6 +105,36 @@ cursor: none;
   z-index: 9999;
 }
 
+.from-left{
+  animation: fromLeft  ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+@keyframes fromLeft{
+  from {
+    transform: translateX(-100%);
+    opacity:0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.from-right{
+   animation: fromRight  ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+@keyframes fromRight{
+  from {
+    transform: translateX(100%);
+    opacity:0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 .shine-text {
   position: relative;
@@ -305,9 +335,11 @@ cursor: none;
   /* overflow: hidden; */
   position: relative;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
+
+
 
 /* Circle Overlay */
 .circle-overlay {
