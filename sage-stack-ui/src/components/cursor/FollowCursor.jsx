@@ -85,8 +85,8 @@ export default function SmoothFollower() {
       <div
         className="absolute rounded-full border dark:border-white border-white "
         style={{
-          width: isHovering ? '44px' : '28px',
-          height: isHovering ? '44px' : '28px',
+          width: isHovering ? '28px' : '28px',
+          height: isHovering ? '28px' : '28px',
           transform: 'translate(-50%, -50%)',
           left: `${renderPos.border.x}px`,
           top: `${renderPos.border.y}px`,
