@@ -8,7 +8,7 @@ const port = 8080;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: `${import.meta.env.REACT_URL}`,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
