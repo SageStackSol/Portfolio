@@ -12,7 +12,7 @@ console.log(submitClicked)
     if(submitClicked){
       console.log('running',clientEmail,clientMobileNo,clientName)
     axios
-      .post("http://localhost:8080/client-info", {
+      .post(`${import.meta.env.BACKEND_URL/client-info}`, {
         name: clientName,
         mobileNo: clientMobileNo,
         email: clientEmail,
